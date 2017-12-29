@@ -6,7 +6,14 @@
  * @return {Array}
  */
 
-var getAllUsernames;
+var getAllUsernames = function(obj) {
+  let usernames = [];
+  let users = obj.data.id;
+  for (var key in users){
+    usernames.push(users[key].username)
+  }
+  return usernames;
+};
 
 /* #hometownCity
  *
@@ -440,7 +447,7 @@ var getPrices;
 var addName;
 
 module.exports = {
-  getAllUsernames: null,
+  getAllUsernames: getAllUsernames,
   hometownCity: null,
   usersCurrentState: null,
   findAdmin: null,
